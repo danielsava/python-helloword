@@ -1,4 +1,4 @@
-qtd = int(input("Digite a quantidade"))
+qtd = int(input("Digite a quantidade: "))
 
 num = 0
 

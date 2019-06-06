@@ -15,6 +15,14 @@ print("Brasil", "ganhou", 5, "títulos", "mundiais", sep=" ", end="\n\n*** Final
 nome = "Daniel"
 idade = 36
 
-print("{} tem {} anos".format(nome, idade))
+print("{} tem {} anos".format(nome, idade), end="\n\n\n")
 
+
+#
+nome = "Nico"
+sobrenome = "Steppat"
+print(nome + sobrenome)
+print(nome, sobrenome)
+print(nome, sobrenome, sep="_")
+print(nome, sobrenome, sep=" * ", end=" * \n FIM")
 
