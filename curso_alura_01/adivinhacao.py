@@ -6,8 +6,6 @@ numero_secreto = 42
 total_tentativas = 3
 rodada = 1
 
-jogo_finalizado = False
-
 while rodada <= total_tentativas:
 
     print("Tentativa {} de {}".format(rodada, total_tentativas))
@@ -22,7 +20,7 @@ while rodada <= total_tentativas:
 
     if acertou:
         print("Você acertou")
-        jogo_finalizado = True
+        break
     else:
         if maior:
             print("O chute foi maior do que o número secreto")
@@ -33,7 +31,5 @@ while rodada <= total_tentativas:
 
     rodada = rodada + 1
 
-    if jogo_finalizado or rodada > total_tentativas:
-        print("*** Jogo Finalizado ***")
-        break
+print("*** Jogo Finalizado ***")
 
