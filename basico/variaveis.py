@@ -32,6 +32,9 @@ print("inteiro: ", type(quantidade))
 """
     Booleano : 'bool'    
 """
+
+var_booleano = False
+
 idade = 20
 tipo_booleano = idade > 18
 print("Booleano: ", type(tipo_booleano))
