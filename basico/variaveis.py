@@ -1,6 +1,7 @@
 
 """
-    Padrão para nome de variáveis: O nome de variáveis em Python segue o padrão "Snake_Case"
+    Padrão para nome de variáveis: O nome de variáveis em Python segue o padrão 'Snake_Case', diferente de linguagens
+    como o Java que seguem o padrão 'CamelCase'
 """
 
 idade_esposa = 20
