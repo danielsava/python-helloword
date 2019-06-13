@@ -32,3 +32,7 @@ while contador <= 10:
     print(contador)
     contador = contador + 3
 
+# Iterando sobre uma String, imprimindo cada letra da String
+for letra in "teste":
+    print(letra)
+

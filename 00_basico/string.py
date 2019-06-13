@@ -64,3 +64,29 @@ print("R$ {:7.2f}").format(4.5)
 # Preenche com zeros
 print("R$ {:07.2f}").format(4.5)
 print("R$ {:08.3f}").format(4.5)
+
+'''
+    'Pesquisar' dentro das String´s
+'''
+
+# 'find': retorna a posição, dentro da string, para a primeira ocorrência do caracter informado
+palavra = "banana"
+print(palavra.find("b"))
+
+
+# 'for': Usando iteração
+for letra in palavra:
+    print(letra)
+
+
+'''
+    'Capitalize' 
+'''
+palavra_capitalizada = palavra.capitalize()
+print(palavra_capitalizada)
+
+
+'''
+    'strip': é o 'trim' do Python 
+'''
+print("   teste   ".strip())
