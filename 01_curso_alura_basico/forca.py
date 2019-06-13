@@ -1,4 +1,5 @@
 def jogar():
+
     print("**********************************")
     print("*** Bem vindo ao jogo de Força ***")
     print("**********************************", end="\n\n")

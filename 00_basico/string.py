@@ -1,17 +1,28 @@
-idade = input("Qual sua idade?")
+"""
+    'String'
+"""
 
+#
+idade = "28"
 print("Você digitou:", idade)
 
-# Convertendo a string idade no inteiro idade_int
+# Tamanho da String
+print(len(idade))
+
+"""
+    String também sao Listas:
+        - Por isso vários métodos das listas tb são aplicadas às Strings
+"""
+print(max(idade))
+print(min(idade))
+print(idade[1])
+
+
+"""
+    'Conversão'
+"""
 idade_int = int(idade)
 
-print("Idade string concatenada com 2")
-print(idade + "2")
-
-print("\n\n")
-
-print("Idade numérica somada com 2")
-print(idade_int + 2)
 
 '''
     Interpolação com String
