@@ -1,5 +1,5 @@
 def jogar():
-
+    print("")
     print("**********************************")
     print("*** Bem vindo ao jogo de Força ***")
     print("**********************************", end="\n\n")
@@ -16,25 +16,34 @@ def jogar():
     enforcou = False
     acertou = False
 
+    erros = 0
+
     while not enforcou and not acertou:
 
-        chute = input("Qual a letra: ").lower().strip()
+        chute = input("\nQual a letra: ").lower().strip()
 
-        index = 0
-
-        for letra in palavra_secreta:
-            if chute == letra.lower().strip():
-                print("Encontrei a letra '{}' na posição '{}'".format(letra, index), end="\n\n")
-                letras_acertadas[index] = letra
-            index = index + 1
+        if chute in palavra_secreta:
+            index = 0
+            for letra in palavra_secreta:
+                if chute == letra.lower().strip():
+                    print("Encontrei a letra '{}' na posição '{}'".format(letra, index), end="\n\n")
+                    letras_acertadas[index] = letra
+                index += 1
+        else:
+            erros += 1
 
         print(letras_acertadas, "\n\n")
 
-        if letras_acertadas.count("_") == 0:
-            print("*** Você acertou a palavra ****")
+        enforcou = erros == 6
+
+        if erros > 0:
+            print("Quantidade de erros: {} de 6".format(erros), end="\n\n")
+
+        if "_" not in letras_acertadas:
+            print("\n*** Você acertou a palavra ****")
             acertou = True
 
-    print("*** Jogo Finalizado ***")
+    print("\n*** Jogo Finalizado ***")
 
 
 # Inicio Execução

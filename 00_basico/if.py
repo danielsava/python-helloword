@@ -8,7 +8,7 @@ else:
 
 # Com o uso de paranteses (recomendado pelas boas práticas em Python)
 
-if (idade < 16):
+if idade < 16:
     print("Não pode votar")
 else:
     print("Pode votar")
