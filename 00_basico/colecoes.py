@@ -1,9 +1,34 @@
+
 """
-    'List'
+   No Python são consideradas sequências (coleções);
+
+    - 'list'
+
+    - 'tuple': Imutável
+
+    - 'range': Imutável
+
+    - 'string': Imutável
+        String é uma sequência de caracter
+
+    - 'dictionary'
+        Lista Chave Valor
+
+
 """
 
+"""
+    'List'
+     - O único tipo de sequência no Python que é mutável.
+"""
+
+#
 valores = ["a", "b", "c"]
 print(type(valores))
+
+
+# Posição: obtem o elemento na posição de index 0
+print(valores[0])
 
 # Inserindo valores
 valores.append("d")
@@ -49,8 +74,32 @@ print(valores)
 # Quantidade de ocorrências dentro da Lista
 print(valores.count(10))
 
+
+
+"""
+    'set'
+     - Mesmo conceito do Java, quando comparamos List com Set. Ou seja, o Set não permite valores duplicados
+     - Set não possui índice.
+"""
+
+set1 = {"Daniel", "Leonardo", "Guilherme"}
+
+# Adiciona o "Luciana"
+set1.add("Luciana")
+
+# Não altera a sequencia porque já existe o valor
+set1.add("Daniel")
+
+set1.add("teste")
+
+# Remove o valor informado, caso exista. Caso não existe, é lançado um erro.
+set1.remove("teste")
+
+
+
 """
     'tuple'
+        - As tuplas, diferente da lista, não mudam. Não podem ser alteradas, portanto são IMUTÁVEIS.
 """
 
 tupla = 12, 3134, 434, "a", "teste"
@@ -61,4 +110,67 @@ for item in tupla:
 
 existe = 3134 in tupla
 print(existe)
+
+exite = "a" in tupla
+print(existe)
+
+
+
+"""
+    'range'
+        - Aceita somente valores do tipo 'Integer', além de ser imutável
+"""
+serie = range(0, 10)
+
+print(type(serie))
+
+for i in serie:
+    print(i)
+
+
+
+"""
+    Convertendo Coleções
+        
+"""
+list1 = ["a" "b", "c", "d"]
+list1_tuple = tuple(list1)
+
+tuple1 = "a", "b", "c", "d"
+tuple1_list = list(tuple1)
+
+
+
+"""
+    Matriz: Sequências dentro de Sequências
+    
+"""
+
+instrutor1 = ("Nico", 39)
+instrutor2 = ("Flávio", 37)
+
+instrutores = [instrutor1, instrutor2]
+
+idade_instrutor1 = instrutores[0][1]
+print(idade_instrutor1)
+
+
+
+"""
+    'dict': 
+        - É o dicionário. São as sequências 'Chave / Valor' no Python
+
+"""
+
+instrutores = {'Nico': 39, 'Flávio': 37, 'Marcos': 30}
+
+print(type(instrutores))
+
+# Imprimindo a idade de Nico
+print(instrutores['Nico'])
+
+
+
+
+
 
