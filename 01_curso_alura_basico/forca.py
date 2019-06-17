@@ -8,10 +8,7 @@ def jogar():
 
     print("Palavra Secreta:", palavra_secreta, end="\n\n")
 
-    letras_acertadas = []
-
-    for l in palavra_secreta:
-        letras_acertadas.append("_")
+    letras_acertadas = ["_" for letra in palavra_secreta]
 
     enforcou = False
     acertou = False

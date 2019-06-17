@@ -26,8 +26,29 @@
 valores = ["a", "b", "c"]
 print(type(valores))
 
+"""
+    Formas de INICIALIZAR
+"""
 
-# Posição: obtem o elemento na posição de index 0
+# Inicializa a lista com o caracter '"_"' para cada letra da string 'palavra'
+palavra = "banana"
+letras_acertadas = ["_" for letra in palavra]
+
+# Inicializa 'lista2' com cada palavra de 'frutas' convertidas para maiúsculas
+frutas = ["maça", "banana", "laranja", "melancia"]
+lista2 = [fruta.upper() for fruta in frutas]
+
+# Inicializa a coleção com o quadrado da lista de 'inteiros'
+inteiros = [1, 2, 3, 4, 5, 6, 7, 8]
+quadrados = [i*i for i in inteiros]
+
+# Com CONDICIONAL IF, para criar uma lista somente com números pares
+numr_pares = [n for n in inteiros if n % 2 == 0]
+
+
+"""
+    Index: Posição do elemento dentro da coleção
+"""
 print(valores[0])
 
 # Inserindo valores
