@@ -2,33 +2,15 @@ import random
 
 
 def jogar():
-    print("")
-    print("**********************************")
-    print("*** Bem vindo ao jogo de Força ***")
-    print("**********************************", end="\n\n")
 
-    # Somente para criar e preencher o arquivo
-    with open('palavras.txt', 'w') as arquivo:
-        arquivo.write('siriguela\n')
-        arquivo.write('pequi\n')
-        arquivo.write('cagaita\n')
-        arquivo.write('araticum\n')
-        arquivo.write('mangaba\n')
-        arquivo.write('buriti\n')
-        arquivo.write('baru\n')
+    imprimir_msg_inicializacao()
 
-    # Arquivo modo leitura
-    palavras = []
-    with open('palavras.txt', 'r') as arquivo:
-        for linha in arquivo:
-            palavras.append(linha.strip().lower())
+    gerar_arquivo_palavras()
 
-    #
+    palavras = gerar_lista_palavras()
     print("Palavras Secretas: ", palavras, end="\n\n")
 
-    # Escolhendo uma Palavra
-    palavra_secreta = palavras[random.randrange(0, len(palavras))]
-
+    palavra_secreta = escolher_palavra_secreta(palavras)
     print("Palavra Secreta:", palavra_secreta, end="\n\n")
 
     letras_acertadas = ["_" for letra in palavra_secreta]
@@ -66,6 +48,44 @@ def jogar():
     print("\n*** Jogo Finalizado ***")
 
 
-# Inicio Execução
+def escolher_palavra_secreta(palavras):
+    return palavras[random.randrange(0, len(palavras))]
+
+
+def gerar_lista_palavras():
+    palavras = []
+    with open('palavras.txt', 'r') as arquivo:
+        for linha in arquivo:
+            palavras.append(linha.strip().lower())
+    return palavras
+
+
+def gerar_arquivo_palavras():
+    # Somente para criar e preencher o arquivo
+    with open('palavras.txt', 'w') as arquivo:
+        arquivo.write('siriguela\n')
+        arquivo.write('pequi\n')
+        arquivo.write('cagaita\n')
+        arquivo.write('araticum\n')
+        arquivo.write('mangaba\n')
+        arquivo.write('buriti\n')
+        arquivo.write('baru\n')
+
+
+def imprimir_msg_inicializacao():
+    print("")
+    print("**********************************")
+    print("*** Bem vindo ao jogo de Força ***")
+    print("**********************************", end="\n\n")
+
+
+'''
+
+   ******************************************************************************************************************
+    Esta função deve SEMPRE ficar no final do arquivo. Python é uma linguagem de script, entao ele deve ler todo o 
+    arquivo antes de inicializar o programa.
+   * *****************************************************************************************************************
+    
+'''
 if __name__ == "__main__":
     jogar()
