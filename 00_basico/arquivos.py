@@ -21,7 +21,10 @@
 arquivo = open("palavras.txt", "w")
 
 # Escreve no arquivo
-arquivo.write("banana")
+arquivo.write("pequi\n")
+arquivo.write("siriguela\n")
+arquivo.write("cagaita\n")
+arquivo.write("araticum\n")
 
 # 'Finaliza' a escrita no arquivo, e fecha o IO com o arquivo
 arquivo.close()
@@ -32,12 +35,23 @@ arquivo.write("\nmaca")
 arquivo.write("\nuva")
 arquivo.close()
 
+'''
+    'with': leitura de arquivos com o 'with'. Com o with não é necessário executar o 'close()', pois dessa forma passa 
+                                              a ser responsabilidade do Python fechar o IO.
+
+'''
+
+with open('palavras.txt') as arquivo:
+    for linha in arquivo:
+        print(linha)
+
 
 # 'read()' : Lê o conteúdo do arquivo inteiro. Depois da primeira leitura, a segunda vez não retorna nada (ponteiro).
 #            Pois o comando 'read()' lê o arquivo inteiro de uma vez, colocando o ponteiro de leitura no final do
 #            mesmo. Caso queira ler o arquivo denovo, basta fechar com o 'close()', abri-lo novamente com o 'open()'
+arquivo = open('palavaras.txt')
 todo_conteudo = arquivo.read()
-
+arquivo.close()
 
 # Lendo o arquivo 'linha' a 'linha' com o 'for'. OBS: O 'print' possui um '\n' embutido, por isso 'pula' uma linha ao
 #                                                     ao imprimir.
@@ -72,3 +86,5 @@ logo.close()
 logo2 = open('python-logo2.png', 'wb')
 logo2.write(data)
 logo2.close()
+
+

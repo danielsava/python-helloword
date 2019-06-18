@@ -8,24 +8,20 @@ def jogar():
     print("**********************************", end="\n\n")
 
     # Somente para criar e preencher o arquivo
-    arquivo = open('palavras.txt', 'w')
-
-    arquivo.write('siriguela\n')
-    arquivo.write('pequi\n')
-    arquivo.write('cagaita\n')
-    arquivo.write('araticum\n')
-    arquivo.write('mangaba\n')
-    arquivo.write('buriti\n')
-    arquivo.write('baru\n')
-
-    arquivo.close()
+    with open('palavras.txt', 'w') as arquivo:
+        arquivo.write('siriguela\n')
+        arquivo.write('pequi\n')
+        arquivo.write('cagaita\n')
+        arquivo.write('araticum\n')
+        arquivo.write('mangaba\n')
+        arquivo.write('buriti\n')
+        arquivo.write('baru\n')
 
     # Arquivo modo leitura
-    arquivo = open('palavras.txt', 'r')
     palavras = []
-    for linha in arquivo:
-        palavras.append(linha.strip().lower())
-    arquivo.close()
+    with open('palavras.txt', 'r') as arquivo:
+        for linha in arquivo:
+            palavras.append(linha.strip().lower())
 
     #
     print("Palavras Secretas: ", palavras, end="\n\n")
