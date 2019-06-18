@@ -33,20 +33,35 @@ arquivo.write("\nuva")
 arquivo.close()
 
 
-# 'read()' : Lê o conteúdo do arquivo inteiro. OBS: depois da primeira leitura, a segunda vez não retorna nada.
+# 'read()' : Lê o conteúdo do arquivo inteiro. Depois da primeira leitura, a segunda vez não retorna nada (ponteiro).
+#            Pois o comando 'read()' lê o arquivo inteiro de uma vez, colocando o ponteiro de leitura no final do
+#            mesmo. Caso queira ler o arquivo denovo, basta fechar com o 'close()', abri-lo novamente com o 'open()'
 todo_conteudo = arquivo.read()
 
 
-# Lendo o arquivo 'linha' a 'linha' com o 'for'
+# Lendo o arquivo 'linha' a 'linha' com o 'for'. OBS: O 'print' possui um '\n' embutido, por isso 'pula' uma linha ao
+#                                                     ao imprimir.
 arquivo = open("palavras.txt", "r")
 for linha in arquivo:
     print(linha)
+arquivo. close()
 
 
-# Utilizando o 'readline()'
+# O 'strip()' resolve o problema acima de 'pular uma linha', pois além de ser um 'trim()' ele também o '\n'.
+arquivo = open("palavras.txt", "r")
+for linha in arquivo:
+    print(linha.strip())
 
 
+# Lendo 'linha a linha' do arquivo com o 'readline()'. É um ponteiro, e cada vez que executa ele lê a próxima linha.
+linha = arquivo.readline()
+print("Linha 1: ", linha)
 
+linha = arquivo.readline()
+print("Linha 2: ", linha)
+
+linha = arquivo.readline()
+print("Linha 3: ", linha)
 
 
 # Cópia de arquivos em modo binário. No caso, gera uma cópia de 'python-logo.png'
