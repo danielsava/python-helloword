@@ -22,7 +22,7 @@ def jogar():
 
     while not enforcou and not acertou:
 
-        chute = input("\nQual a letra: ").lower().strip()
+        chute = inserir_chute()
 
         if chute in palavra_secreta:
             index = 0
@@ -33,19 +33,27 @@ def jogar():
                 index += 1
         else:
             erros += 1
+            desenha_forca(erros)
 
         print(letras_acertadas, "\n\n")
 
-        enforcou = erros == 6
+        enforcou = erros == 7
+
+        if enforcou:
+            imprime_mensagem_perdedor(palavra_secreta)
 
         if erros > 0:
-            print("Quantidade de erros: {} de 6".format(erros), end="\n\n")
+            print("Quantidade de erros: {} de 7".format(erros), end="\n\n")
 
         if "_" not in letras_acertadas:
-            print("\n*** Você acertou a palavra ****")
             acertou = True
+            imprime_mensagem_vencedor()
 
     print("\n*** Jogo Finalizado ***")
+
+
+def inserir_chute():
+    return input("\nQual a letra: ").lower().strip()
 
 
 def escolher_palavra_secreta(palavras):
@@ -77,6 +85,92 @@ def imprimir_msg_inicializacao():
     print("**********************************")
     print("*** Bem vindo ao jogo de Força ***")
     print("**********************************", end="\n\n")
+
+
+def imprime_mensagem_vencedor():
+    print("Parabéns, você ganhou!")
+    print("       ___________      ")
+    print("      '._==_==_=_.'     ")
+    print("      .-\\:      /-.    ")
+    print("     | (|:.     |) |    ")
+    print("      '-|:.     |-'     ")
+    print("        \\::.    /      ")
+    print("         '::. .'        ")
+    print("           ) (          ")
+    print("         _.' '._        ")
+    print("        '-------'       ")
+
+
+def desenha_forca(erros):
+    print("  _______     ")
+    print(" |/      |    ")
+
+    if erros == 1:
+        print(" |      (_)   ")
+        print(" |            ")
+        print(" |            ")
+        print(" |            ")
+
+    if erros == 2:
+        print(" |      (_)   ")
+        print(" |      \     ")
+        print(" |            ")
+        print(" |            ")
+
+    if erros == 3:
+        print(" |      (_)   ")
+        print(" |      \|    ")
+        print(" |            ")
+        print(" |            ")
+
+    if erros == 4:
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |            ")
+        print(" |            ")
+
+    if erros == 5:
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |            ")
+
+    if erros == 6:
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      /     ")
+
+    if erros == 7:
+        print(" |      (_)   ")
+        print(" |      \|/   ")
+        print(" |       |    ")
+        print(" |      / \   ")
+
+    print(" |            ")
+    print("_|___         ")
+    print()
+
+
+def imprime_mensagem_perdedor(palavra_secreta):
+    print("Puxa, você foi enforcado!")
+    print("A palavra era {}".format(palavra_secreta))
+    print("    _______________         ")
+    print("   /               \       ")
+    print("  /                 \      ")
+    print("//                   \/\  ")
+    print("\|   XXXX     XXXX   | /   ")
+    print(" |   XXXX     XXXX   |/     ")
+    print(" |   XXX       XXX   |      ")
+    print(" |                   |      ")
+    print(" \__      XXX      __/     ")
+    print("   |\     XXX     /|       ")
+    print("   | |           | |        ")
+    print("   | I I I I I I I |        ")
+    print("   |  I I I I I I  |        ")
+    print("   \_             _/       ")
+    print("     \_         _/         ")
+    print("       \_______/           ")
 
 
 '''
