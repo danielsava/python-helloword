@@ -51,3 +51,38 @@ class Conta:
     def imprimir_extrato(self):
         print("Saldo de {} do titular {}.".format(self.__saldo, self.__titular))
 
+
+    """
+        Get / Set
+    """
+
+    @property
+    def numero(self):
+        print("Chamando 'get' de 'numero'")
+        return self.__numero
+
+    @property
+    def titular(self):
+        print("Chamando 'get' de 'titular'")
+        return self.__titular
+
+    @property
+    def saldo(self):
+        print("Chamando 'get' de 'saldo'")
+        return self.__saldo
+
+    @saldo.setter
+    def saldo(self, saldo):
+        print("Chamando 'set' de 'saldo'")
+        self.__saldo = saldo
+
+    @property
+    def limite(self):
+        print("Chamando 'get' de 'limite'")
+        return self.__limite
+
+    @limite.setter
+    def limite(self, limite):
+        print("Chamando 'set' de 'limite'")
+        self.__limite = limite
+
