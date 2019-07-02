@@ -1,8 +1,8 @@
 """
 
-    Atributo Privado
-    '__' : Dois underscore em Python é o 'private' do Java. Ou seja, caso queira que uma atributo seja privado
-           basta adicionar esses dois underscore no nome do atributo.
+    Atributo ou Método Privado
+    '__' : Dois underscore em Python é o 'private' do Java. Ou seja, caso queira que uma atributo ou método seja privado
+           basta adicionar esses dois underscore antes do no nome do atributo ou do método.
 
     Limpando referência de Memória
     'None': limpa a referência de um objeto
@@ -38,6 +38,9 @@ class Conta:
         Métodos
     """
 
+    def imprimir_extrato(self):
+        print("Saldo de {} do titular {}.".format(self.__saldo, self.__titular))
+
     def transferir(self, valor, destino):
         self.sacar(valor)
         destino.depositar(valor)
@@ -46,10 +49,38 @@ class Conta:
         self.__saldo += valor
 
     def sacar(self, valor):
-        self.__saldo -= valor
+        if self.pode_sacar(valor):
+            self.__saldo -= valor
+        else:
+            print("O valor {} passou o limite da conta".format(valor))
 
-    def imprimir_extrato(self):
-        print("Saldo de {} do titular {}.".format(self.__saldo, self.__titular))
+
+
+    """ 
+        Método PRIVADO 
+    """
+    def __pode_sacar(self, valor):
+        valor_disponivel_a_sacar = self.__saldo + self.__limite
+        return valor <= valor_disponivel_a_sacar
+
+
+
+    """
+        Métodos Estáticos
+            
+    """
+    # - Para acessar, digite: 'Conta.codigo_banco()'
+    @staticmethod
+    def codigo_banco():
+        return '001'
+
+    # Neste caso para acessar:
+    # - codigos = Conta.codigos_bancos()
+    # - codg_caixa = codigos['Caixa']
+    @staticmethod
+    def codigos_banco():
+        return {'Banco do Brasil': '001', 'Caixa': '104', 'Bradesco': '237'}
+
 
 
     """
