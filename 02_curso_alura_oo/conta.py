@@ -55,14 +55,12 @@ class Conta:
             print("O valor {} passou o limite da conta".format(valor))
 
 
-
     """ 
         Método PRIVADO 
     """
     def __pode_sacar(self, valor):
         valor_disponivel_a_sacar = self.__saldo + self.__limite
         return valor <= valor_disponivel_a_sacar
-
 
 
     """
@@ -80,7 +78,6 @@ class Conta:
     @staticmethod
     def codigos_banco():
         return {'Banco do Brasil': '001', 'Caixa': '104', 'Bradesco': '237'}
-
 
 
     """
