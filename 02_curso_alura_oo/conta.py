@@ -16,6 +16,19 @@
 class Conta:
 
 
+
+    """
+        Atrbiutos Estáticos:
+            - São definidos fora o construtor('__init__'), e são acessados da mesma forma dos métodos estáticos, sem
+            a necessidade criar uma instância da classe:
+                'Conta.pais'
+                'Conta.numr_pi'
+
+    """
+    pais = 'Brasil'
+    numr_pi = 3.14
+
+
     """
         Construtores
     """
@@ -67,6 +80,7 @@ class Conta:
         Métodos Estáticos
             
     """
+
     # - Para acessar, digite: 'Conta.codigo_banco()'
     @staticmethod
     def codigo_banco():
