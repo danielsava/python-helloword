@@ -94,6 +94,16 @@ class Conta:
         return {'Banco do Brasil': '001', 'Caixa': '104', 'Bradesco': '237'}
 
 
+    # Uso do '@classmethod'
+    #       - O argumento 'cls' é uma convenção (semelhante ao 'self'), e através dele temos acesso aos
+    #       atributos da classe
+    @classmethod
+    def info(cls):
+        return f'Esse é um {cls.titular}'
+
+
+
+
     """
         Get / Set
     """
