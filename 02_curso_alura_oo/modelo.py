@@ -1,5 +1,5 @@
 """
-    Programa
+   Modelo : Programa
 """
 
 
@@ -27,10 +27,13 @@ class Programa:
     def likes(self):
         return self._likes
 
+    # Sobrescrita do 'toString' do Python
+    def __str__(self):
+        return f'{self._nome} - {self.ano} - {self._likes} likes'
 
 
 """
-    Filme
+    Modelo : Filme
 
 """
 
@@ -40,10 +43,13 @@ class Filme(Programa):
         super().__init__(nome, ano)
         self.duracao = duracao
 
+    # Sobrescrita do 'toString' do Python
+    def __str__(self):
+        return f'{self._nome} - {self.ano} - {self.duracao} min - {self._likes} likes'
 
 
 """
-    Serie
+    Modelo : Serie
 
 """
 
@@ -53,6 +59,9 @@ class Serie(Programa):
         super().__init__(nome, ano)
         self.temporadas = temporadas
 
+    # Sobrescrita do 'toString' do Python
+    def __str__(self):
+        return f'{self._nome} - {self.ano} - {self.temporadas} temporadas - {self._likes} likes'
 
 
 """
@@ -73,3 +82,8 @@ print(f'SERIE : Nome: {atlanta.nome} - Ano: {atlanta.ano} - Temporadas: {atlanta
 
 atlanta.dar_likes()
 print(f'SERIE : Nome: {atlanta.nome} - Ano: {atlanta.ano} - Temporadas: {atlanta.temporadas} - Likes: {atlanta.likes}')
+
+filmes_e_series = [vingadores, atlanta]
+
+for programa in filmes_e_series:
+    print(programa)
