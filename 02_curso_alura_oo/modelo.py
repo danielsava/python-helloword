@@ -65,25 +65,78 @@ class Serie(Programa):
 
 
 """
+    Modelo : Serie
+
+"""
+
+class PlayList:
+
+    def __init__(self, nome, programas):
+        self.nome = nome
+        self.__programas = programas
+
+    ''' 
+        Torna a PlayList uma classe ITERÁVEL (iterable) e com isso passa a ter suporte à diversos 
+        recursos como o 'FOR', o 'IN', o acesso à lista por índice ( ex.: playlist_x[0] )
+         
+    '''
+    def __getitem__(self, item):
+        return self.__programas[item]
+
+    '''
+        Torna a classe um 'sized', podendo utilizar o 'len' para saber o tamanho da lista de programas
+    '''
+    def __len__(self):
+        return len(self.__programas)
+
+    @property
+    def listagem(self):
+        return self.__programas
+
+
+
+"""
     Testes
 
 """
 
+print("")
 
 vingadores = Filme('VingadorES - GUErra Infinita', 2018, 160)
-print(f'FILME : Nome: {vingadores.nome} - Ano: {vingadores.ano} - Duração: {vingadores.duracao} - Likes: {vingadores.likes}')
-
-vingadores.dar_likes()
-vingadores.dar_likes()
-print(f'FILME : Nome: {vingadores.nome} - Ano: {vingadores.ano} - Duração: {vingadores.duracao} - Likes: {vingadores.likes}')
 
 atlanta = Serie('Atlanta', 2017, 2)
-print(f'SERIE : Nome: {atlanta.nome} - Ano: {atlanta.ano} - Temporadas: {atlanta.temporadas} - Likes: {atlanta.likes}')
+
+tmep = Filme('Todo mundo em Pânico', 1999, 100)
+
+demolidor = Serie('Demolidor', 2016, 2)
+
+vingadores.dar_likes()
+vingadores.dar_likes()
 
 atlanta.dar_likes()
-print(f'SERIE : Nome: {atlanta.nome} - Ano: {atlanta.ano} - Temporadas: {atlanta.temporadas} - Likes: {atlanta.likes}')
+atlanta.dar_likes()
+atlanta.dar_likes()
 
-filmes_e_series = [vingadores, atlanta]
+tmep.dar_likes()
+tmep.dar_likes()
+tmep.dar_likes()
+tmep.dar_likes()
 
-for programa in filmes_e_series:
+demolidor.dar_likes()
+demolidor.dar_likes()
+
+print("")
+
+# Lista mantem a ordem de inserção dos elementos
+filmes_e_series = [vingadores, atlanta, demolidor, tmep]
+
+# O modelo 'PlayList' herdou de 'list' portanto possui um iterable e outras funcionalidades do List, como o 'len'
+playlist_fim_de_semana = PlayList('Fim de semana', filmes_e_series)
+
+print(f'Tamanho da PlayList: {len(playlist_fim_de_semana)}')
+
+for programa in playlist_fim_de_semana:
     print(programa)
+
+print(f'Ta ou não tá ? {demolidor in playlist_fim_de_semana}')
+
