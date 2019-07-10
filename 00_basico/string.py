@@ -36,8 +36,9 @@ print("{} tem {} anos".format(nome, idade))
 print("Tentativa {1} de {0}".format(3, 10))
 
 
+
 '''
-    Interpolação com Variáveis
+    Interpolação com Variáveis (Python 3)
 '''
 
 nome = "Daniel"
@@ -90,6 +91,25 @@ for letra in palavra:
     print(letra)
 
 
+# As String no Python são List, portanto os caracteres podem ser pesquisados através dos índices
+meuNome = "Daniel Sava"
+
+letra_D = meuNome[0]
+letra_N = meuNome[2]
+palavra_Sava = meuNome[7:11]
+
+# Caso não informe o início, o Python por default atribiu '0' (início)
+palavra_Daniel = meuNome[:6]
+
+# O inverso do caso acima.
+trecho_final = meuNome[6:]
+
+print(letra_D)
+print(letra_N)
+print(palavra_Sava)
+print(palavra_Daniel)
+
+
 '''
     'Capitalize' 
 '''
@@ -98,6 +118,6 @@ print(palavra_capitalizada)
 
 
 '''
-    'strip': é o 'trim' do Python 
+    'strip': é o 'trim' do Python, mais completo que o 'trim' do Java pois ele limpa outras coisas
 '''
 print("   teste   ".strip())
