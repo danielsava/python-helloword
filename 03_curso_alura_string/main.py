@@ -1,1 +1,3 @@
 meuNome = "Rodrigo"
+
+print(meuNome)
