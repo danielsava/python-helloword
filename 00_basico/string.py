@@ -117,7 +117,30 @@ palavra_capitalizada = palavra.capitalize()
 print(palavra_capitalizada)
 
 
+
 '''
     'strip': é o 'trim' do Python, mais completo que o 'trim' do Java pois ele limpa outras coisas
 '''
 print("   teste   ".strip())
+
+int
+
+'''
+    'replace': substitui na string as ocorrências informadas no argumento do método 
+'''
+banco = "bytebank_byte"
+banco_novo = banco.replace("byte", "sava")
+print(banco_novo)
+
+# Informa a quantidade de ocorrências que deseja substituir. No caso, apenas a primeira.
+banco_novo = banco.replace("byte", "sava", 1)
+
+
+
+'''
+    'startswith' / 'endwith': verifica se a string começa com os caracteres informados  
+'''
+
+nome = "Daniel Sava"
+print(nome.startswith("Daniel"))
+
