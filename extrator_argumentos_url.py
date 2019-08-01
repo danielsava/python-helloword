@@ -15,6 +15,19 @@ class ExtratorArgumentoUrl:
         moedaOrigem, moedaDestino = self.extrair_argumentos()
         return f"MoedaOrigem: {moedaOrigem}, MoedaDestino: {moedaDestino}, Valor: R$ {self.extrair_valor()}"
 
+
+    def __eq__(self, other):
+        if not other:
+            return False
+
+        if isinstance(other, ExtratorArgumentoUrl):
+            return self.url == other.url
+        else:
+            return False
+
+
+
+
     @staticmethod
     def url_valida(url):
         if url and url.startswith("https://bytebank.com"):
